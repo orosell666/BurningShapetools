@@ -14,7 +14,11 @@ class User(db.Model):
 
 
     def __repr__(self):
-        return f'<User {self.email}>'
+        return {
+            "user.id": self.id,
+           
+            # do not serialize the password, its a security breach
+        }
 
     def serialize(self):
         return {
@@ -36,8 +40,12 @@ class Snowparks(db.Model):
     shapers = db.Column(db.Integer, nullable=False)
     bullydrivers = db.Column(db.Integer, nullable=False)
 
+
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'),
+        nullable=False)
+
     def __repr__(self):
-        return '<Snowparks %r>' %self.id
+        return '<Snowparks >' %self.id
 
     def serialize(self):
 
