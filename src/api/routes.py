@@ -2,7 +2,7 @@
 This module takes care of starting the API Server, Loading the DB and Adding the endpoints
 """
 from flask import Flask, request, jsonify, url_for, Blueprint
-from api.models import db, User, Snowparks, Country, Companies
+from api.models import db, User, Snowparks, Country, Companies, Jobs
 from api.utils import generate_sitemap, APIException
 from flask_jwt_extended import create_access_token
 from flask_jwt_extended import JWTManager, create_access_token, jwt_required, get_jwt_identity
@@ -32,7 +32,7 @@ def registro():
     phonenumber = request.json.get('phonenumber')
     birthdate = request.json.get('birthdate')
     print(request.json)
-    birthdate = datetime.strptime(birthdate, '%d/%m/%Y') #la fecha hay que escribirla asi: ida/mes/año 2/5/2025
+    
 
 
     user = User(email= email , password= password, name= name, lastName= lastName, phonenumber= phonenumber,  birthdate= birthdate, is_active= True)
@@ -50,7 +50,7 @@ def registro():
     return jsonify(data_response), 200
 
 
-@api.route('/snowparks', methods=['GET' , 'POST'])
+@api.route('/snowparks', methods=['POST'])
 def snowparks():
     id = request.json.get('id')
     name = request.json.get('name')
@@ -63,7 +63,7 @@ def snowparks():
     snowparks= Snowparks(id = id, name = name, resort = resort , location = location , country = country , shapers = shapers , bullydrivers = bullydrivers)
     db.session.add(snowparks)
     db.session.commit()
-    db.session.get(snowparks) 
+    
 
     data_response= {
         "id": snowparks.id,
@@ -76,3 +76,15 @@ def snowparks():
     }
     return jsonify(data_response), 200
 
+@api.route('/snowparks', methods=['GET'])
+def GetSnowparks():
+    snowparks = Snowparks.query.all()
+    data = [snowpark.serialize() for snowpark in snowparks]
+
+    return jsonify(data), 200
+
+@api.route('/snowparks/<int:id>', methods=['GET'])
+def GetSnowparksDetail(id):
+    snowpark = Snowparks.query.get(id)
+
+    return jsonify(snowpark.serialize()), 200
