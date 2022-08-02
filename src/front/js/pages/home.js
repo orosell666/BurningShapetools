@@ -8,7 +8,7 @@ export const Home = () => {
 
 	return (
 		<div className="text-center mt-5">
-			<h1>Hello Rigo!!</h1>
+			<h1>Hello Oriol!!</h1>
 			<p>
 				<img src="https://c.tenor.com/UH_6a9UuIMMAAAAC/cool.gif" />
 			</p>
