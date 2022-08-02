@@ -88,3 +88,49 @@ def GetSnowparksDetail(id):
     snowpark = Snowparks.query.get(id)
 
     return jsonify(snowpark.serialize()), 200
+
+@api.route('/companies', methods=['POST'])
+def GetCompany():
+    name = request.json.get('name')
+
+    companies = Companies(name= name)
+    db.session.add(companies)
+    db.session.commit()
+
+    data_response= {
+        "name": companies.name
+    }
+    return jsonify(data_response), 200
+
+@api.route('/companies', methods=['GET'])
+def getcompanie():
+    
+    companies = Companies.query.all()
+    listCompanies = []
+    for companies in companies:
+        listCompanies.append(companies.serialize()) 
+
+    return jsonify(listCompanies), 200
+
+@api.route('/countries', methods=['POST'])
+def GetCountry():
+    name = request.json.get('name')
+
+    countries = Country(name= name)
+    db.session.add(country)
+    db.session.commit()
+
+    data_response= {
+        "name": country.name
+    }
+    return jsonify(data_response), 200
+
+@api.route('/countries', methods=['GET'])
+def getCountries():
+    
+    countries = Country.query.all()
+    listCountries = []
+    for countries in countries:
+        listCountries.append(countries.serialize()) 
+
+    return jsonify(listCountries), 200

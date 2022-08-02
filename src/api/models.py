@@ -73,9 +73,7 @@ class Companies(db.Model):
     name = db.Column(db.String(80), nullable=False)
     location = db.Column(db.String(80), nullable=False)
     
-    country_id = db.Column(db.Integer, db.ForeignKey('country.id'),
-       nullable=False)
-    country = db.relationship('Country', backref='companies', lazy=True, cascade = "all,delete")
+   
     
     
     def serialize(self):
@@ -84,7 +82,7 @@ class Companies(db.Model):
             "id": self.id,
             "name": self.name,
             "location": self.location,
-            "country": self.country,
+           
         }
 
 
