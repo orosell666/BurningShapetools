@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { Context } from "../store/appContext";
-import rigoImageUrl from "../../img/rigo-baby.jpg";
+import { SnowparkCard } from "../component/snowparklist";
 import "../../styles/home.css";
 
 export const Home = () => {
@@ -12,6 +12,9 @@ export const Home = () => {
 			<p>
 				<img src="https://c.tenor.com/UH_6a9UuIMMAAAAC/cool.gif" />
 			</p>
+			<div className="container">
+				<SnowparkCard />
+			</div>
 			<div className="alert alert-info">
 				{store.message || "Loading message from the backend (make sure your python backend is running)..."}
 			</div>
