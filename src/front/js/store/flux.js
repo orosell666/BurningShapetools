@@ -17,9 +17,18 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 					.then(data => setStore({ snowparks: data }))
 					.catch(error => console.log("Error al cargar snowparks", error));
+			},
+
+			LoadCountryParks: async () => {
+
+				await fetch(process.env.BACKEND_URL + "/api/countries")
+					.then(resp => resp.json())
+
+					.then(data => setStore({ countries: res.results }))
+					.catch(error => console.log("Error al cargar countries", error));
 			}
 		}
 	};
-};
 
+}
 export default getState;
