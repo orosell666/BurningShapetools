@@ -100,8 +100,16 @@ class Country(db.Model):
 class Jobs(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     description = db.Column(db.String(300), nullable=False)
+    jobtitle = db.Column(db.String(50), nullable=False)
 
-    snowparks_id = db.Column(db.Integer, db.ForeignKey('snowparks.id'),
+    companies_id = db.Column(db.Integer, db.ForeignKey('companies.id'),
         nullable=False)
-    snowparks = db.relationship('Snowparks', backref='SnowparksJob', lazy=True, cascade = "all,delete")
-    
+    companies = db.relationship('Companies', backref='companies<-job', lazy=True, cascade = "all,delete")
+
+    def serialize(self):
+
+        return {
+            "id": self.id,
+            "description": self.description,
+            "jobtitle": self.jobtitle,
+        }

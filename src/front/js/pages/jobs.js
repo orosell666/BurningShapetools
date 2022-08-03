@@ -16,8 +16,8 @@ export const Jobs = props => {
 
 	return (
 		<div className="jumbotron">
-			<h1 className="display-4">This will show the demo element: {store.jobs[params.theid]}</h1>
-			<img src="https://c.tenor.com/UH_6a9UuIMMAAAAC/cool.gif" />
+			<h1 className="display-4">Shape Opportunities{store.jobs[params.theid]}</h1>
+			<img src="https://i.gifer.com/NHqO.gif" className="card-img-top" />
 
 		</div>
 	);
