@@ -26,6 +26,15 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 					.then(data => setStore({ countries: res.results }))
 					.catch(error => console.log("Error al cargar countries", error));
+			},
+
+			LoadJobs: async () => {
+
+				await fetch(process.env.BACKEND_URL + "/api/jobs")
+					.then(resp => resp.json())
+
+					.then(data => setStore({ jobs: data }))
+					.catch(error => console.log("Error al cargar countries", error));
 			}
 		}
 	};

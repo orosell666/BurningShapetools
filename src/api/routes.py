@@ -134,3 +134,28 @@ def getCountries():
         listCountries.append(countries.serialize()) 
 
     return jsonify(listCountries), 200
+
+@api.route('/jobs', methods=['POST'])
+def GetJobs():
+    description = request.json.get('description')
+    id = request.json.get('id')
+
+    jobs = Jobs(description= description)
+    db.session.add(jobs)
+    db.session.commit()
+
+    data_response= {
+        "description": jobs.description,
+        "id": jobs.id
+    }
+    return jsonify(data_response), 200
+
+@api.route('/jobs', methods=['GET'])
+def getJobs():
+    
+    jobs = Jobs.query.all()
+    listJobs = []
+    for jobs in jobs:
+        listJobs.append(jobs.serialize()) 
+
+    return jsonify(listJobs), 200
