@@ -1,18 +1,19 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { Context } from "../store/appContext";
 import { Link, useHistory } from "react-router-dom";
 
 export const SnowparkCard = () => {
-    const { store } = useContext(Context);
+    const { store, actions } = useContext(Context);
 
-    fetch(process.env.BACKEND_URL + "/api/snowparks")
-        .then(resp => resp.json())
+    useEffect(() => {
 
-        .then(data => setStore({ snowparks: data }))
-        .catch(error => console.log("Error al cargar snowparks", error));
+        actions.LoadSnowpark(store.snowparks);
+
+    }, [])
+
 
     return (
-        //store.snowparks.map(value, index),
+        //store.snowparks.map(),
 
         < div >
 
@@ -20,7 +21,7 @@ export const SnowparkCard = () => {
 
                 <div className="card-body">
                     <h5 className="card-title">hello hello</h5>
-                    <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <p className="card-text">{store.snowparks.name}</p>
                     <a href="#" className="btn btn-primary">Go somewhere</a>
                 </div>
             </div>
