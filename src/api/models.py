@@ -39,6 +39,10 @@ class Snowparks(db.Model):
     country = db.Column(db.String(80), nullable=False)
     shapers = db.Column(db.Integer, nullable=False)
     bullydrivers = db.Column(db.Integer, nullable=False)
+    parkweb = db.Column(db.String(80), nullable=True)
+    image_url = db.Column(db.String(300), nullable=True)
+    comment = db.Column(db.String(300), nullable=True)
+    machines = db.Column(db.String(300), nullable=True)
 
 
     
@@ -61,9 +65,13 @@ class Snowparks(db.Model):
             "resort": self.resort,
             "location": self.location,
             "country": self.country.name,
-            # "country": self.country.serialize(),
             "shapers": self.shapers,
             "bullydrivers": self.bullydrivers,
+            "parkweb": self.parkweb,
+            "image_url": self.image_url,
+            "comment": self.comment,
+            "machines": self.machines
+            
 
 
         }
