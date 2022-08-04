@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export const Navbar = () => {
 	return (
-		<nav className="navbar navbar-expand-lg">
+		<nav className="navbar navbar-expand-sm">
 			<div className="container">
 				<div className="row">
 					<Link to="/">
@@ -19,13 +19,12 @@ export const Navbar = () => {
 								Parks, Companies & Jobs
 							</a>
 							<ul className="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-
+								<Link to="/jobs">
+									<li><a className="dropdown-item" href="#">Wanna use the shapetool this winter? Check the chances!</a></li></Link>
 								<Link to="/country">
 									<li><a className="dropdown-item" href="#">Check the parks in each Country</a></li></Link>
 								<Link to="/companies">
 									<li><a className="dropdown-item" href="#">Companies that shape</a></li></Link>
-								<Link to="/jobs">
-									<li><a className="dropdown-item" href="#">Wanna use the shapetool this winter? Check the chances!</a></li></Link>
 
 
 							</ul>

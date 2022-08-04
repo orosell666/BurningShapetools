@@ -92,13 +92,16 @@ def GetSnowparksDetail(id):
 @api.route('/companies', methods=['POST'])
 def GetCompany():
     name = request.json.get('name')
+    web = request.json.get('web')
 
     companies = Companies(name= name)
     db.session.add(companies)
     db.session.commit()
 
     data_response= {
-        "name": companies.name
+        "name": companies.name,
+        "web": companies.web
+        
     }
     return jsonify(data_response), 200
 

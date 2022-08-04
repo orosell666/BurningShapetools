@@ -72,6 +72,7 @@ class Companies(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(80), nullable=False)
     location = db.Column(db.String(80), nullable=False)
+    web = db.Column(db.String(180), nullable=False)
     
    
     
@@ -82,6 +83,7 @@ class Companies(db.Model):
             "id": self.id,
             "name": self.name,
             "location": self.location,
+            "web": self.web,
            
         }
 
