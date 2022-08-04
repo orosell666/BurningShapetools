@@ -19,6 +19,7 @@ export const Country = () => {
 	return (
 
 		<div>
+			<h1>Here you can see the parks filtered by Country</h1>
 			<div className="card col-md-3 mb-3 me-3 shadow p-3 mb-5 bg-body rounded" >
 				<img src="https://c.tenor.com/UH_6a9UuIMMAAAAC/cool.gif" className="card-img-top img-fluid mx-auto " alt="" />
 				<div className="card-body text-center">
