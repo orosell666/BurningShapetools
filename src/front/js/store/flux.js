@@ -35,6 +35,15 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 					.then(data => setStore({ jobs: data }))
 					.catch(error => console.log("Error al cargar countries", error));
+			},
+
+			LoadCompanies: async () => {
+
+				await fetch(process.env.BACKEND_URL + "/api/companies")
+					.then(resp => resp.json())
+
+					.then(data => setStore({ companies: data }))
+					.catch(error => console.log("Error al cargar countries", error));
 			}
 		}
 	};

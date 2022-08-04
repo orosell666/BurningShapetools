@@ -7,7 +7,7 @@ export const Company = () => {
 
     useEffect(() => {
 
-        actions.LoadCountryParks();
+        actions.LoadCompanies();
     }, [])
 
     return (
