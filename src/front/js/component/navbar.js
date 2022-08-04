@@ -16,13 +16,17 @@ export const Navbar = () => {
 					<ul className="navbar-nav">
 						<li className="nav-item dropdown">
 							<a className="btn btn-dark dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-								Parks and Jobs
+								Parks, Companies & Jobs
 							</a>
 							<ul className="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-								<Link to="/jobs">
-									<li><a className="dropdown-item" href="#">Wanna use the shapetool this winter? Check the chances!</a></li></Link>
+
 								<Link to="/country">
 									<li><a className="dropdown-item" href="#">Check the parks in each Country</a></li></Link>
+								<Link to="/companies">
+									<li><a className="dropdown-item" href="#">Companies that shape</a></li></Link>
+								<Link to="/jobs">
+									<li><a className="dropdown-item" href="#">Wanna use the shapetool this winter? Check the chances!</a></li></Link>
+
 
 							</ul>
 						</li>
