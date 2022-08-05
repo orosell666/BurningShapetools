@@ -1,8 +1,9 @@
 import React, { useEffect, useContext } from "react";
 import { SnowparkModal } from "../component/snowparkmodal"
 import { Context } from "../store/appContext";
+import PropTypes from 'prop-types';
 
-export const Country = () => {
+export const Country = (props) => {
 	const { store, actions } = useContext(Context);
 
 	useEffect(() => {
@@ -129,3 +130,6 @@ export const Country = () => {
 
 	)
 }
+Country.propTypes = {
+	snowpark: PropTypes.any
+};

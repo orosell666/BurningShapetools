@@ -20,17 +20,17 @@ export const SnowparkModal = (props) => {
             <div className="" >
 
                 <div className="card-body">
-                    <img src="https://c.tenor.com/UH_6a9UuIMMAAAAC/cool.gif" className="card-img-top" width={300} height={500} alt="..." />
-                    <h5 className="card-title">Park Name</h5>
-                    <p className="card-text">{props.snowpark.name} Resort:</p>
-                    <p className="card-text">{ } Location:</p>
-                    <p className="card-text">{ } Country:</p>
-                    <p className="card-text">{ } Shapers:</p>
-                    <p className="card-text">{ } Bullydrivers:</p>
-                    <p className="card-text">{ } Web:</p>
-                    <p className="card-text">{ } Machines:</p>
+                    <img src={props.snowpark.image_url} className="card-img-top" width={300} height={500} alt="..." />
+                    <h5 className="card-title"><strong>{props.snowpark.name}</strong></h5>
+                    <p className="card-text">Resort: {props.snowpark.resort} </p>
+                    <p className="card-text">Location:  {props.snowpark.location}</p>
+                    <p className="card-text">Country: {props.snowpark.country}</p>
+                    <p className="card-text">Shapers: {props.snowpark.shapers}</p>
+                    <p className="card-text">Bullydrivers: {props.snowpark.bullydrivers}</p>
+                    <p className="card-text">Web: {props.snowpark.web}</p>
+                    <p className="card-text">Machines: {props.snowpark.machines}</p>
 
-                    <p className="card-text">{ } Comment:</p>
+                    <p className="card-text">Comment: {props.snowpark.companies}</p>
 
 
 

@@ -20,9 +20,9 @@ export const SnowparkCard = (props) => {
                     <img src="https://c.tenor.com/UH_6a9UuIMMAAAAC/cool.gif" className="card-img-top" alt="..." />
                     <h5 className="card-title">hello hello</h5>
                     <p className="card-text">Location: {props.snowpark.location}</p>
-                    <p className="card-text">Number of shapers: { }</p>
-                    <p className="card-text">Number of catdrivers{ }</p>
-                    <p className="card-text">Company in charge: { }</p>
+                    <p className="card-text">Number of shapers: {props.snowpark.shapers}</p>
+                    <p className="card-text">Number of catdrivers: {props.snowpark.bullydrivers}</p>
+                    <p className="card-text">Company in charge: {props.snowpark.companies}</p>
                     <button type="button" className="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal">More Info</button>
 
                     <div className="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
