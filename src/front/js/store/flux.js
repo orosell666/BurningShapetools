@@ -1,10 +1,10 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
-			snowparks: {},
+			snowparks: [],
 			companies: [],
 			countries: [],
-			jobs: {},
+			jobs: [],
 
 		},
 
