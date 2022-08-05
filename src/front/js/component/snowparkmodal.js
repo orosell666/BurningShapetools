@@ -28,6 +28,9 @@ export const SnowparkModal = () => {
                     <p className="card-text">{ } Shapers:</p>
                     <p className="card-text">{ } Bullydrivers:</p>
                     <p className="card-text">{ } Web:</p>
+                    <p className="card-text">{ } Machines:</p>
+                    <p className="card-text">{ } image_url:</p>
+                    <p className="card-text">{ } Comment:</p>
 
 
 
