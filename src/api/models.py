@@ -41,7 +41,7 @@ class Snowparks(db.Model):
     bullydrivers = db.Column(db.Integer, nullable=False)
     parkweb = db.Column(db.String(80), nullable=True)
     image_url = db.Column(db.String(300), nullable=True)
-    comment = db.Column(db.String(300), nullable=True)
+    comment = db.Column(db.String(1000), nullable=True)
     machines = db.Column(db.String(300), nullable=True)
 
 
@@ -99,12 +99,14 @@ class Companies(db.Model):
 class Country(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(80), nullable=False)
+    country_flag = db.Column(db.String(100), nullable=False)
  
     def serialize(self):
 
         return {
             "id": self.id,
             "name": self.name,
+            "country_flag,": self.country_flag
         }
 
 class Jobs(db.Model):
