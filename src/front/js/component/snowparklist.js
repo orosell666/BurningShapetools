@@ -2,19 +2,15 @@ import React, { useContext, useEffect } from "react";
 import { Context } from "../store/appContext";
 import { SnowparkModal } from "./snowparkmodal"
 import { Link, useHistory } from "react-router-dom";
+import PropTypes from 'prop-types';
 
-export const SnowparkCard = () => {
+export const SnowparkCard = (props) => {
     const { store, actions } = useContext(Context);
 
-    useEffect(() => {
 
-        actions.LoadSnowpark(store.snowparks);
-
-    }, [])
 
 
     return (
-        //store.snowparks.map(),.
 
         < div >
 
@@ -23,13 +19,18 @@ export const SnowparkCard = () => {
                 <div className="card-body">
                     <img src="https://c.tenor.com/UH_6a9UuIMMAAAAC/cool.gif" className="card-img-top" alt="..." />
                     <h5 className="card-title">hello hello</h5>
-                    <p className="card-text">{store.snowparks.name}</p>
+                    <p className="card-text">Location: {props.snowpark.location}</p>
+                    <p className="card-text">Number of shapers: { }</p>
+                    <p className="card-text">Number of catdrivers{ }</p>
+                    <p className="card-text">Company in charge: { }</p>
                     <button type="button" className="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal">More Info</button>
 
                     <div className="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div className="modal-dialog modal-lg">
                             <div className="modal-content">
-                                <SnowparkModal />
+                                {store.snowparks.map((snowpark) => {
+                                    return (<SnowparkModal key={snowpark.id} snowpark={snowpark} />)
+                                })}
                             </div>
                         </div>
                     </div>
@@ -43,3 +44,6 @@ export const SnowparkCard = () => {
     )
 
 }
+SnowparkCard.propTypes = {
+    snowparks: PropTypes.any
+};

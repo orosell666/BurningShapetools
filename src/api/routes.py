@@ -138,6 +138,17 @@ def getCountries():
 
     return jsonify(listCountries), 200
 
+@api.route('/loadcountries/<int:id>', methods=['GET'])
+def getParkByCountry(id):
+    
+    countries = Country.query.get(id)
+        #listCountries = []
+    ##for countries in countries:
+    #    listCountries.append(countries.serialize()) 
+
+    return jsonify(countries.serialize()), 200
+#list(map(lambda countries: countries.serialize(), countries))
+
 @api.route('/jobs', methods=['POST'])
 def GetJobs():
     description = request.json.get('description')
