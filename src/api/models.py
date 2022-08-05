@@ -70,8 +70,9 @@ class Snowparks(db.Model):
             "parkweb": self.parkweb,
             "image_url": self.image_url,
             "comment": self.comment,
-            "machines": self.machines
-            
+            "machines": self.machines,
+            "country_id": self.country.id,
+            "companies_id": self.companies.id
 
 
         }

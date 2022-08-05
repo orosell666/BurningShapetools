@@ -9,6 +9,7 @@ export const Country = (props) => {
 	useEffect(() => {
 
 		actions.LoadCountryParks();
+		actions.LoadSnowpark(store.snowparks);
 	}, [])
 	//const filtered = snowparks.filter(snowpark => {
 
@@ -131,5 +132,5 @@ export const Country = (props) => {
 	)
 }
 Country.propTypes = {
-	snowpark: PropTypes.any
+	snowparks: PropTypes.any
 };

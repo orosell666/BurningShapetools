@@ -58,7 +58,7 @@ def snowparks():
     location = request.json.get('location')
     country = request.json.get('country')
     shapers = request.json.get('shapers')
-    bullydrivers = request.json.get('bulydrivers')
+    bullydrivers = request.json.get('bullydrivers')
 
     snowparks= Snowparks(id = id, name = name, resort = resort , location = location , country = country , shapers = shapers , bullydrivers = bullydrivers)
     db.session.add(snowparks)
@@ -141,12 +141,12 @@ def getCountries():
 @api.route('/loadcountries/<int:id>', methods=['GET'])
 def getParkByCountry(id):
     
-    countries = Country.query.get(id)
-        #listCountries = []
-    ##for countries in countries:
-    #    listCountries.append(countries.serialize()) 
+   countries = Country.query.all()
+   listCountries = []
+   for countries in countries:
+        listCountries.append(countries.serialize()) 
 
-    return jsonify(countries.serialize()), 200
+   return jsonify(countries.serialize()), 200
 #list(map(lambda countries: countries.serialize(), countries))
 
 @api.route('/jobs', methods=['POST'])
