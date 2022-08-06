@@ -59,8 +59,12 @@ def snowparks():
     country = request.json.get('country')
     shapers = request.json.get('shapers')
     bullydrivers = request.json.get('bullydrivers')
+    parkweb = request.json.get('parkweb')
+    image_url = request.json.get('image_url')
+    comment = request.json.get('comment')
+    machines = request.json.get('machines')
 
-    snowparks= Snowparks(id = id, name = name, resort = resort , location = location , country = country , shapers = shapers , bullydrivers = bullydrivers)
+    snowparks= Snowparks(id = id, name = name, resort = resort , location = location , country = country , shapers = shapers , bullydrivers = bullydrivers, parkweb = parkweb, image_url = image_url, comment = comment, machines = machines)
     db.session.add(snowparks)
     db.session.commit()
     
@@ -73,6 +77,10 @@ def snowparks():
         "country": snowparks.country,
         "shapers": snowparks.shapers,
         "bullydrivers": snowparks.bullydrivers,
+        "parkweb": snowparks.parkweb,
+        "image_url": snowparks.image_url,
+        "comment": snowparks.comment,
+        "machines": snowparks-machines
     }
     return jsonify(data_response), 200
 
@@ -141,7 +149,7 @@ def getCountries():
 @api.route('/loadcountries/<int:id>', methods=['GET'])
 def getParkByCountry(id):
     
-   countries = Country.query.all()
+   countries = Country.query.all() #creo que tengo que filtar el quiery. filter_by mirar-lo!!! si filtra hacer un map
    listCountries = []
    for countries in countries:
         listCountries.append(countries.serialize()) 
