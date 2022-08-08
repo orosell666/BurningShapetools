@@ -29,40 +29,47 @@ export const Country = (props) => {
 
 		<div className="container">
 			<h1 className="container mt-5 text-center">Here you can see the parks filtered by Country</h1>
-			<div className="container text-center mt-5">
+			<div className="container  mt-5">
 				{
 					store.countries.map((value, index) => {
 						return (
-							<div onClick={() => {
+							<div className="row align-items-center" onClick={() => {
 								GetParks(value.id)
-							}}><h2>{value.name}</h2><img src={value.country_flag} width={60} height={50} className=" justify-content-center" alt="" /></div>
+							}}>
+								<div className="col-4 col-lg-2">
+
+									{value.name}     <img src={value.country_flag} width={40} height={30} alt="" />
+
+								</div>
+							</div>
 						)
 					})
 				}
 				{
 					parks.map((value, index) => {
 						return (
-							<div className="card col-md-3 mb-3 me-3 shadow p-3 mb-5 bg-body rounded mt-5" key={index}>
-								<div className="card-body text-center" >
-									<img src="https://i.gifer.com/YJ4u.gif" className="card-img-top img-fluid mx-auto " alt="" />
-									<h5 className="card-title" id={`id${value.id}`}><strong>{value.name}</strong></h5>
-									<p className="card-text" id={`id${value.id}`}>Location: {value.location}</p>
-									<p className="card-text" id={`id${value.id}`}>Number of shapers: { }</p>
-									<p className="card-text" id={`id${value.id}`}>Number of catdrivers{ }</p>
-									<p className="card-text" id={`id${value.id}`}>Company in charge: { }</p>
-								</div>
-								<button type="button" className="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal">More Info</button>
+							<div className="row g-4 d-flex flex-row flex-nowrap overflow-auto">
+								<div className="card col-md-3 mb-3 me-3 shadow p-3 mb-5 bg-body rounded mt-5" key={index}>
+									<div className="card-body text-center" >
+										<img src="https://i.gifer.com/YJ4u.gif" className="card-img-top img-fluid mx-auto " alt="" />
+										<h5 className="card-title" id={`id${value.id}`}><strong>{value.name}</strong></h5>
+										<p className="card-text" id={`id${value.id}`}>Location: {value.location}</p>
+										<p className="card-text" id={`id${value.id}`}>Number of shapers: { }</p>
+										<p className="card-text" id={`id${value.id}`}>Number of catdrivers{ }</p>
+										<p className="card-text" id={`id${value.id}`}>Company in charge: { }</p>
+									</div>
+									<button type="button" className="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal">More Info</button>
 
-								<div className="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-									<div className="modal-dialog modal-lg">
-										<div className="modal-content">
-											{store.snowparks.map((snowpark) => {
-												return (<SnowparkModal key={snowpark.id} snowpark={snowpark} />)
-											})}
+									<div className="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+										<div className="modal-dialog modal-lg">
+											<div className="modal-content">
+												{store.snowparks.map((snowpark) => {
+													return (<SnowparkModal key={snowpark.id} snowpark={snowpark} />)
+												})}
+											</div>
 										</div>
 									</div>
-								</div>
-							</div>
+								</div></div>
 
 						)
 					})
