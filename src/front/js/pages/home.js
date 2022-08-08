@@ -18,12 +18,12 @@ export const Home = () => {
 			</p>
 			<h1>Burning Shapetools!!</h1>
 			<p className="mt-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vulputate efficitur augue non volutpat. Morbi ultricies vitae ex vitae luctus. Praesent efficitur eleifend ex non aliquam. Curabitur sodales felis a erat lobortis, at pretium dui elementum. Curabitur porttitor ipsum quis bibendum rhoncus. In vitae dapibus ex, tristique efficitur tellus. Phasellus at dapibus magna. Vivamus sit amet nulla accumsan urna gravida scelerisque.</p>
-
-			<div className="container mt-5">
-				{store.snowparks.map((snowpark) => {
-					return (<SnowparkCard key={snowpark.id} snowpark={snowpark} />)
-				})}
-
+			<div className="card-group mt-5 ">
+				<div className="row g-4 d-flex flex-row flex-nowrap overflow-auto">
+					{store.snowparks.map((snowpark) => {
+						return (<SnowparkCard key={snowpark.id} snowpark={snowpark} />)
+					})}
+				</div>
 			</div>
 
 		</div>

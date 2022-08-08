@@ -63,7 +63,7 @@ export const Country = (props) => {
 				</div>
 				<div className="container">
 					<div className="container text-center mt-5">
-						<h2 >Italy</h2><img src="  https://cdn-icons.flaticon.com/png/512/3373/premium/3373278.png?token=exp=1659623517~hmac=b0ad465754de665770269fbf158a38fc" width={60} height={50} className=" justify-content-center" alt="" /></div>
+						<h2 >Italy</h2><img src="  https://cdn-icons.flaticon.com/png/512/3373/3373278.png" width={60} height={50} className=" justify-content-center" alt="" /></div>
 					<div className="card col-md-3 mb-3 me-3 shadow p-3 mb-5 bg-body rounded mt-5" >
 						<img src="https://c.tenor.com/UH_6a9UuIMMAAAAC/cool.gif" className="card-img-top img-fluid mx-auto " alt="" />
 						<div className="card-body text-center">

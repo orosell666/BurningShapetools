@@ -13,37 +13,38 @@ export const SnowparkModal = (props) => {
 
 
     return (
+        store.snowparks.map((value, index) => {
+            return (
 
 
-        < div >
 
-            <div className="" >
+                <div>
 
-                <div className="card-body">
-                    <img src={props.snowpark.image_url} className="card-img-top" width={300} height={500} alt="..." />
-                    <h5 className="card-title"><strong>{props.snowpark.name}</strong></h5>
-                    <p className="card-text">Resort: {props.snowpark.resort} </p>
-                    <p className="card-text">Location:  {props.snowpark.location}</p>
-                    <p className="card-text">Country: {props.snowpark.country}</p>
-                    <p className="card-text">Shapers: {props.snowpark.shapers}</p>
-                    <p className="card-text">Bullydrivers: {props.snowpark.bullydrivers}</p>
-                    <p className="card-text">Web: {props.snowpark.web}</p>
-                    <p className="card-text">Machines: {props.snowpark.machines}</p>
+                    <div className="" >
 
-                    <p className="card-text">Comment: {props.snowpark.companies}</p>
+                        <div className="card-body">
+                            <img src={value.image_url} className="card-img-top" width={300} height={500} alt="..." />
+                            <h5 className="card-title"><strong>{value.name}</strong></h5>
+                            <p className="card-text">Resort: {value.resort} </p>
+                            <p className="card-text">Location:  {value.location}</p>
+                            <p className="card-text">Country: {props.snowpark.country}</p>
+                            <p className="card-text">Shapers: {props.snowpark.shapers}</p>
+                            <p className="card-text">Bullydrivers: {props.snowpark.bullydrivers}</p>
+                            <p className="card-text">Web: {props.snowpark.web}</p>
+                            <p className="card-text">Machines: {props.snowpark.machines}</p>
 
+                            <p className="card-text">Comment: {props.snowpark.companies}</p>
+
+
+
+                        </div>
+                    </div>
 
 
                 </div>
-            </div>
+            )
+        }
 
-
-        </div >
-
-
-    )
+        ))
 
 }
-SnowparkModal.propTypes = {
-    snowpark: PropTypes.any
-};
