@@ -30,11 +30,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 			LoadSelectedSnowparkByCountry: async (id) => {
 
-				await fetch(process.env.BACKEND_URL + "/api/snowparkbycountry" + country)
-					.then(resp => resp.json())
+				const response = await fetch(process.env.BACKEND_URL + "/api/snowparkbycountry/" + id)
+				const resp = await response.json()
 
-					.then(data => setStore({ snowparks: data }))
-					.catch(error => console.log("Error al cargar snowpark seleccionado", error));
+				return resp
 			},
 
 
@@ -46,7 +45,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				await fetch(process.env.BACKEND_URL + "/api/countries")
 					.then(resp => resp.json())
 
-					.then(data => setStore({ countries: res.results }))
+					.then(data => setStore({ countries: data }))
 					.catch(error => console.log("Error al cargar countries", error));
 			},
 

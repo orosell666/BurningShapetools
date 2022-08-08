@@ -107,7 +107,7 @@ class Country(db.Model):
         return {
             "id": self.id,
             "name": self.name,
-            "country_flag,": self.country_flag
+            "country_flag": self.country_flag
         }
 
 class Jobs(db.Model):

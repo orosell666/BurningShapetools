@@ -102,9 +102,9 @@ def GetSnowparksDetail(id):
 @api.route('/snowparkbycountry/<country>', methods=['GET'])
 def GetSnowparkByCountry(country):
 
-    snowparks = Snowparks.query(Snowparks.country).group_by(Snowpark.country).all()
+    snowparks = Snowparks.query.filter_by(country_id = country)
 
-    all_parks = list(map(lambda x: x.serialize(), snowparks()))
+    all_parks = list(map(lambda x: x.serialize(), snowparks))
 
     return jsonify(all_parks), 200
 
