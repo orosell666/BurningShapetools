@@ -91,13 +91,23 @@ def GetSnowparks():
 
     return jsonify(data), 200
 
-@api.route('/snowparks/<int:id>', methods=['GET'])
+@api.route('/selectedsnowparks/<int:id>', methods=['GET'])
 def GetSnowparksDetail(id):
     snowpark = Snowparks.query.filter_by(id = id)
 
     all_parks = list(map(lambda x: x.serialize(), snowparks()))
 
     return jsonify(all_parks), 200
+
+@api.route('/snowparkbycountry/<country>', methods=['GET'])
+def GetSnowparkByCountry(country):
+
+    snowparks = Snowparks.query(Snowparks.country).group_by(Snowpark.country).all()
+
+    all_parks = list(map(lambda x: x.serialize(), snowparks()))
+
+    return jsonify(all_parks), 200
+
 
 @api.route('/companies', methods=['POST'])
 def GetCompany():

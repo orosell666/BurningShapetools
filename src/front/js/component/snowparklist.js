@@ -25,20 +25,17 @@ export const SnowparkCard = (props) => {
                             <p className="card-text">Number of shapers: {value.shapers}</p>
                             <p className="card-text">Number of catdrivers: {value.bullydrivers}</p>
                             <p className="card-text">Company in charge: {value.companies}</p>
-                            <button type="button" className="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal">More Info</button>
+                            <button type="button" className="btn btn-dark" data-bs-toggle="modal" data-bs-target={`#exampleModal_${value.id}`}>More Info</button>
 
-                            <div className="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                <div className="modal-dialog modal-lg">
-                                    <div className="modal-content">
-                                        <SnowparkModal />
-                                    </div>
-                                </div>
-                            </div>
+
+                            <SnowparkModal id={value.id} name={value.name} resort={value.resort} location={value.location} country={value.country} shapers={value.shapers} bullydrivers={value.bullydrivers} web={value.web} machines={value.machines} comment={value.comment} />
                         </div>
                     </div>
+                </div>
 
 
-                </div >
+
+
             )
         })
     )
