@@ -19,6 +19,18 @@ const getState = ({ getStore, getActions, setStore }) => {
 					.catch(error => console.log("Error al cargar snowparks", error));
 			},
 
+			LoadSelectedSnowpark: async (id) => {
+
+				await fetch(process.env.BACKEND_URL + "/api/snowparks" + id)
+					.then(resp => resp.json())
+
+					.then(data => setStore({ snowparks: data }))
+					.catch(error => console.log("Error al cargar snowpark seleccionado", error));
+			},
+
+
+
+
 			LoadCountryParks: async () => {
 
 				await fetch(process.env.BACKEND_URL + "/api/countries")

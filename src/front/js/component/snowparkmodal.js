@@ -1,39 +1,38 @@
 import React, { useContext, useEffect } from "react";
 import { Context } from "../store/appContext";
 import { Link, useHistory } from "react-router-dom";
-import PropTypes from 'prop-types';
+
 export const SnowparkModal = (props) => {
     const { store, actions } = useContext(Context);
 
     useEffect(() => {
 
-        actions.LoadSnowpark(store.snowparks);
+        actions.LoadSelectedSnowpark(store.snowparks);
 
     }, [])
 
 
     return (
-        store.snowparks.map((value, index) => {
+        store.snowparks.map((value, id) => {
+
             return (
 
-
-
-                <div>
+                < div >
 
                     <div className="" >
 
                         <div className="card-body">
-                            <img src={value.image_url} className="card-img-top" width={300} height={500} alt="..." />
-                            <h5 className="card-title"><strong>{value.name}</strong></h5>
-                            <p className="card-text">Resort: {value.resort} </p>
-                            <p className="card-text">Location:  {value.location}</p>
-                            <p className="card-text">Country: {props.snowpark.country}</p>
-                            <p className="card-text">Shapers: {props.snowpark.shapers}</p>
-                            <p className="card-text">Bullydrivers: {props.snowpark.bullydrivers}</p>
-                            <p className="card-text">Web: {props.snowpark.web}</p>
-                            <p className="card-text">Machines: {props.snowpark.machines}</p>
+                            <img src className="card-img-top" width={300} height={500} alt="..." />
+                            <h5 className="card-title" id={`id${value.id}`}><strong>{value.name}</strong></h5>
+                            <p className="card-text" id={`id${value.id}`}>Resort: {value.resort} </p>
+                            <p className="card-text" id={`id${value.id}`}>Location:  {value.location}</p>
+                            <p className="card-text" id={`id${value.id}`}>Country: {value.country}</p>
+                            <p className="card-text" id={`id${value.id}`}>Shapers: {value.shapers}</p>
+                            <p className="card-text" id={`id${value.id}`}>Bullydrivers: {value.bullydrivers}</p>
+                            <p className="card-text" id={`id${value.id}`}>Web: {value.web}</p>
+                            <p className="card-text" id={`id${value.id}`}>Machines: {value.machines}</p>
 
-                            <p className="card-text">Comment: {props.snowpark.companies}</p>
+                            <p className="card-text">Comment: {value.comment}</p>
 
 
 
@@ -41,10 +40,9 @@ export const SnowparkModal = (props) => {
                     </div>
 
 
-                </div>
+                </div >
             )
-        }
-
-        ))
+        })
+    )
 
 }
