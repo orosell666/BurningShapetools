@@ -13,11 +13,7 @@ export const Country = (props) => {
 		actions.LoadSnowpark(store.snowparks);
 		actions.LoadCountryParks();
 	}, [])
-	//const filtered = snowparks.filter(snowpark => {
 
-
-	//return snowpark.country === 'Austria';
-	//	});
 	const GetParks = async (id) => {
 		console.log(id)
 		const result = await actions.LoadSelectedSnowparkByCountry(id)

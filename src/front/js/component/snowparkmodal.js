@@ -1,6 +1,5 @@
-import React, { useContext, useEffect } from "react";
-import { Context } from "../store/appContext";
-import { Link, useHistory } from "react-router-dom";
+import React from "react";
+
 
 export const SnowparkModal = (props) => {
 
