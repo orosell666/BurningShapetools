@@ -33,13 +33,13 @@ export const Country = (props) => {
 				{
 					store.countries.map((value, index) => {
 						return (
-							<div className="row align-items-center" onClick={() => {
-								GetParks(value.id)
-							}}>
-								<div className="col-4 col-lg-2">
-
-									{value.name}     <img src={value.country_flag} width={40} height={30} alt="" />
-
+							<div className="d-inline-flex justify-content-center">
+								<div className="btn-toolbar d-inline-flex-" role="toolbar" aria-label="Toolbar" onClick={() => {
+									GetParks(value.id)
+								}}>
+									<div className="btn-group me-2" role="group" aria-label="First group">
+										<button type="button" className="btn btn-outline-dark">{value.name}     <img src={value.country_flag} width={40} height={30} alt="" /></button>
+									</div>
 								</div>
 							</div>
 						)
