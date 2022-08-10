@@ -7,7 +7,7 @@ export const Footer = () => (
 			<p className=" ms-5">Made with <i className="fa fa-heart text-danger" /> by{" "}
 				<a>orosell666</a>
 			</p>
-			<Link to="/contact">
+			<Link to="/contact" style={{ "text-decoration": "none" }}>
 				<a className="ms-5 text-decoration-none" href="#">Contact</a>
 			</Link>
 		</div>
