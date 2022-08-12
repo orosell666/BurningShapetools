@@ -3,40 +3,27 @@ import { Link } from "react-router-dom";
 
 export const Navbar = () => {
 	return (
-		<nav className="navbar navbar-dark bg-dark navbar-expand-sm">
-			<div className="container">
-				<div className="row">
-					<Link to="/" style={{ "text-decoration": "none" }} >
-						<p className="navbar-brand mb-0 logotipNavbar" >B.S.</p>
-					</Link></div>
-				<button className="navbar-toggler dark logocolor" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
-					<img className="navbar-toggler-icon" ></img>
+		<nav className="navbar navbar-dark bg-dark  navbar-expand-sm">
+			<div className="container-fluid ">
+
+				<Link to="/" style={{ "text-decoration": "none" }} >
+					<a className="navbar-brand mb-0 logotipNavbar" >B.S.</a>
+				</Link>
+				<button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+					<span className="navbar-toggler-icon" ></span>
 				</button>
-				<div className="collapse navbar-collapse justify-content-end dropstart dark logocolor" id="navbarNavDarkDropdown">
-					<ul className="navbar-nav">
-						<li className="nav-item dropdown">
-							<a className="btn btn-dark dropdown-toggle " href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+				<div className="collapse navbar-collapse" id="navbarNavAltMarkup">
+					<div className="navbar-nav mx-auto">
 
-							</a>
-							<ul className="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-								<Link to="/jobs" style={{ "text-decoration": "none" }}>
-									<li><a className="dropdown-item " href="#">Wanna use the shapetool this winter? Check the chances!</a></li></Link>
-								<Link to="/country" style={{ "text-decoration": "none" }}>
-									<li><a className="dropdown-item" href="#">Check the parks in each Country</a></li></Link>
-								<Link to="/companies" style={{ "text-decoration": "none" }}>
-									<li><a className="dropdown-item" href="#">Companies that shape</a></li></Link>
+						<Link to="/jobs" style={{ "text-decoration": "none" }}>
+							<a className="nav-link textNavbar me-4" href="#">Jobs!</a></Link>
+						<Link to="/country" style={{ "text-decoration": "none" }}>
+							<a className="nav-link textNavba me-4" href="#">Country</a></Link>
+						<Link to="/companies" style={{ "text-decoration": "none" }}>
+							<a className="nav-link textNavbar me-4" href="#">Companies that shape</a></Link>
 
-
-							</ul>
-						</li>
-					</ul>
+					</div>
 				</div>
-
-
-
-
-
-
 			</div>
 		</nav >
 	);

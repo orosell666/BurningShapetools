@@ -25,13 +25,13 @@ export const Country = (props) => {
 
 		<div className="container">
 			<h1 className="container mt-5 text-center">Take a look in your Country</h1>
-			<div className="container  mt-5">
+			<div className="container-fluid mx-auto">
 				{
 					store.countries.map((value, index) => {
 
 						return (
-							<div className="d-inline-flex justify-content-center">
-								<div className="btn-toolbar d-inline-flex-" role="toolbar" aria-label="Toolbar" onClick={() => {
+							<div className="d-inline-flex mx-auto">
+								<div className="btn-toolbar d-inline-flex" role="toolbar" aria-label="Toolbar" onClick={() => {
 									GetParks(value.id)
 								}}>
 									<div className="btn-group me-2" role="group" aria-label="First group">
