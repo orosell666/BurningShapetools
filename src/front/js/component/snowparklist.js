@@ -9,20 +9,22 @@ export const SnowparkCard = (props) => {
 
     return (
         store.snowparks.map((value, index) => {
+
             const footerposition = {
                 pb: "20px"
             }
             return (
 
-                <div className="card col-md-3 mb-3 me-3 shadow p-3 mb-5 bg-body rounded" >
-                    <img src="https://c.tenor.com/t2kr2hNEJ3AAAAAC/skeleton-skull.gif" className="card-img-top" alt="..." />
+                <div className="card col-md-3 mb-3 me-3 shadow  mb-5 bg-body rounded" >
+                    <h5 className="card-title">{value.name}</h5>
+                    <img src={value.image_url} className="card-img-top" alt="..." />
                     <div className="card-body ">
-                        <h5 className="card-title">{value.name}</h5>
+
                         <p className="card-text">{value.resort}</p>
                         <p className="card-text">Shapers: {value.shapers}</p>
                         <p className="card-text">Catdrivers: {value.bullydrivers}</p>
 
-                        <div className="card-footer bg-transparent " style={footerposition}>
+                        <div className="card-footer bg-transparent  " >
                             <div className="ms-3 me-3">
                                 <button type="button" className="btn btn-dark" data-bs-toggle="modal" data-bs-target={`#exampleModal_${value.id}`}>More Info</button>
                                 <SnowparkModal id={value.id} name={value.name} resort={value.resort} location={value.location} country={value.country} shapers={value.shapers} bullydrivers={value.bullydrivers} web={value.web} machines={value.machines} comment={value.comment} />

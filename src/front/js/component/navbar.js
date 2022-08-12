@@ -9,14 +9,14 @@ export const Navbar = () => {
 					<Link to="/" style={{ "text-decoration": "none" }} >
 						<p className="navbar-brand mb-0 logotipNavbar" >B.S.</p>
 					</Link></div>
-				<button className="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
-					<span className="navbar-toggler-icon"></span>
+				<button className="navbar-toggler dark " type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
+					<img className="navbar-toggler-icon fa-solid fa-square-caret-down" ></img>
 				</button>
-				<div className="collapse navbar-collapse justify-content-end dropstart" id="navbarNavDarkDropdown">
+				<div className="collapse navbar-collapse justify-content-end dropstart dark" id="navbarNavDarkDropdown">
 					<ul className="navbar-nav">
 						<li className="nav-item dropdown">
-							<a className="btn btn-dark dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-								Parks, Companies & Jobs
+							<a className="btn btn-dark dropdown-toggle " href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+
 							</a>
 							<ul className="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
 								<Link to="/jobs" style={{ "text-decoration": "none" }}>

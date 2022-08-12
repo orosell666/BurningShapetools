@@ -63,6 +63,7 @@ def snowparks():
     image_url = request.json.get('image_url')
     comment = request.json.get('comment')
     machines = request.json.get('machines')
+    
 
     snowparks= Snowparks(id = id, name = name, resort = resort , location = location , country = country , shapers = shapers , bullydrivers = bullydrivers, parkweb = parkweb, image_url = image_url, comment = comment, machines = machines)
     db.session.add(snowparks)
@@ -80,7 +81,9 @@ def snowparks():
         "parkweb": snowparks.parkweb,
         "image_url": snowparks.image_url,
         "comment": snowparks.comment,
-        "machines": snowparks-machines
+        "machines": snowparks.machines
+        
+
     }
     return jsonify(data_response), 200
 
@@ -113,6 +116,8 @@ def GetSnowparkByCountry(country):
 def GetCompany():
     name = request.json.get('name')
     web = request.json.get('web')
+    location = request.json('location')
+
 
     companies = Companies(name= name)
     db.session.add(companies)

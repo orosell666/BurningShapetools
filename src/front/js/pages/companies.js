@@ -21,17 +21,19 @@ export const Company = () => {
                                 return (
 
 
-                                    <div className="card col-md-3 mb-3 me-3 shadow p-3 mb-5 bg-body rounded" > <div className="card-body text-center">
-                                        <img src="https://play-lh.googleusercontent.com/i5zRnn1P9yqkJW2vLLhn_MiLBxUSZVGeGl-HudSCsUWHUxIgldN54wqL55ILuoe-qgY=w2560-h1440-rw" className="card-img-top" alt="..." />
-                                        <h5 className="card-title">{value.name}</h5>
-                                        <p className="card-text">Location:{value.location}</p>
-                                        <Link to="https://{value.web}" className="stretched-link text-dark">
-                                            <p className="card-text">{value.web}</p>
-                                        </Link>
+                                    <div className="card col-md-3 mb-3 me-3 shadow p-3 mb-5 bg-body rounded" >
+                                        <div className="card-body text-center">
+                                            <h5 className="card-title">{value.name}</h5>
+                                            <img src={"https://play-lh.googleusercontent.com/i5zRnn1P9yqkJW2vLLhn_MiLBxUSZVGeGl-HudSCsUWHUxIgldN54wqL55ILuoe-qgY=w2560-h1440-rw"} className="card-img-top" alt="..." />
+
+                                            <p className="card-text">Location:{value.location}</p>
+                                            <Link to="https://{value.web}" className="stretched-link text-dark">
+                                                <p className="card-text">{value.web}</p>
+                                            </Link>
 
 
 
-                                    </div>
+                                        </div>
                                     </div>
 
                                 )

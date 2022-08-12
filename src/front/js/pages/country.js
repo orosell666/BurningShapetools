@@ -54,9 +54,9 @@ export const Country = (props) => {
 
 								return (
 
-									<div className="card col-md-3 mb-3 me-3 shadow p-3 mb-5 bg-body rounded" key={index}>
+									<div className="card col-md-3 mb-3 me-3 shadow  mb-5 bg-body rounded" key={index}>
 										<div className="card-body text-center" >
-											<img src="https://i.gifer.com/YJ4u.gif" className="card-img-top img-fluid mx-auto " alt="" />
+											<img id={`id${value.id}`} src={value.image_url} className="card-img-top img-fluid  " alt="" />
 											<h5 className="card-title" id={`id${value.id}`}><strong>{value.name}</strong></h5>
 											<p className="card-text" id={`id${value.id}`}>{value.resort}</p>
 											<p className="card-text" id={`id${value.id}`}>Shapers: {value.shapers}</p>
