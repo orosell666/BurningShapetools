@@ -35,7 +35,7 @@ export const Country = (props) => {
 									GetParks(value.id)
 								}}>
 									<div className="btn-group me-2" role="group" aria-label="First group">
-										<button type="button" className="btn btn-outline-dark">{value.name}     <img src={value.country_flag} width={25} height={20} alt="" /></button>
+										<button type="button" className="btn ">{value.name}     <img src={value.country_flag} width={35} height={28} alt="" /></button>
 									</div>
 								</div>
 							</div>

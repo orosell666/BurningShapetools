@@ -16,7 +16,7 @@ export const SnowparkModal = (props) => {
 
                     <div className="modal-body">
                         <h5 className="modal-title"><strong>{props.name}</strong></h5>
-                        <img src="https://c.tenor.com/_JHkX5nop_YAAAAd/skulltalk.gif" className="image-fluid" style={imageSize} alt="..." />
+                        <img src={props.image_url} className="image-fluid" style={imageSize} alt="..." />
 
                         <p className="modal-text">{props.resort}, {props.location}, {props.country}</p>
                         <p className="modal-text" >Shapers: {props.shapers}</p>
