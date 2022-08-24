@@ -1,6 +1,7 @@
 import React, { useEffect, useContext } from "react";
 import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
+import GoTo from "../component/goto";
 
 export const Company = () => {
     const { store, actions } = useContext(Context);
@@ -30,6 +31,8 @@ export const Company = () => {
                                             <Link to="https://{value.web}" className="stretched-link text-dark">
                                                 <p className="card-text">{value.web}</p>
                                             </Link>
+                                            <GoTo />
+
 
 
 

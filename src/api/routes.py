@@ -63,9 +63,11 @@ def snowparks():
     image_url = request.json.get('image_url')
     comment = request.json.get('comment')
     machines = request.json.get('machines')
+    country_id = request.json.get('country_id')
+    companies_id = request.json.get('companies_id')
     
 
-    snowparks= Snowparks(id = id, name = name, resort = resort , location = location , country = country , shapers = shapers , bullydrivers = bullydrivers, parkweb = parkweb, image_url = image_url, comment = comment, machines = machines)
+    snowparks= Snowparks(id = id, name = name, resort = resort , location = location , country = country , shapers = shapers , bullydrivers = bullydrivers, parkweb = parkweb, image_url = image_url, comment = comment, machines = machines, country_id = country_id, companies_id = companies_id)
     db.session.add(snowparks)
     db.session.commit()
     
@@ -81,7 +83,9 @@ def snowparks():
         "parkweb": snowparks.parkweb,
         "image_url": snowparks.image_url,
         "comment": snowparks.comment,
-        "machines": snowparks.machines
+        "machines": snowparks.machines,
+        "country_id": snowparks.country_id,
+        "companies_id": snowparks.companies_id
         
 
     }
