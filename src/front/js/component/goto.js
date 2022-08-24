@@ -13,7 +13,7 @@ export const GoTo = () => {
     return (
         <div>
 
-            <button onClick={handleClick}>Twitter</button>
+            <button onClick={handleClick}></button>
         </div>
     );
 }

@@ -16,9 +16,9 @@ export const Navbar = () => {
 					<div className="navbar-nav mx-auto">
 
 						<Link to="/jobs" style={{ "text-decoration": "none" }}>
-							<a className="nav-link textNavbar me-4" href="#">Jobs!</a></Link>
+							<a className="nav-link textNavbar me-4 " href="#">Jobs!</a></Link>
 						<Link to="/country" style={{ "text-decoration": "none" }}>
-							<a className="nav-link textNavba me-4" href="#">Country</a></Link>
+							<a className="nav-link textNavbar me-4" href="#">Country</a></Link>
 						<Link to="/companies" style={{ "text-decoration": "none" }}>
 							<a className="nav-link textNavbar me-4" href="#">Companies that shape</a></Link>
 

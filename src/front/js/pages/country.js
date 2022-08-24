@@ -54,7 +54,7 @@ export const Country = (props) => {
 
 								return (
 
-									<div className="card col-md-3 mb-3 me-3 shadow  mb-5 bg-body rounded" key={index}>
+									<div className="card col-md-4 mb-3 me-3 shadow  mb-5 bg-body rounded" key={index}>
 										<div className="card-body text-center" >
 											<img id={`id${value.id}`} src={value.image_url} className="card-img-top img-fluid  " alt="" />
 											<h5 className="card-title" id={`id${value.id}`}><strong>{value.name}</strong></h5>
@@ -62,10 +62,12 @@ export const Country = (props) => {
 											<p className="card-text" id={`id${value.id}`}>Shapers: {value.shapers}</p>
 											<p className="card-text" id={`id${value.id}`}>Catdrivers: {value.bullydrivers}</p>
 											<p className="card-text" id={`id${value.id}`}>Company in charge: {value.companies}</p>
-											<div class="card-footer bg-transparent " style={footerposition}>
+
+											<div className="card-footer bg-transparent">
 												<button type="button" className="btn btn-dark" data-bs-toggle="modal" data-bs-target={`#exampleModal_${value.id}`}>More Info</button>
 												<SnowparkModal id={value.id} name={value.name} resort={value.resort} location={value.location} country={value.country} shapers={value.shapers} bullydrivers={value.bullydrivers} web={value.web} machines={value.machines} comment={value.comment} />
 											</div>
+
 										</div>
 									</div>
 

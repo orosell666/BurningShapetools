@@ -24,7 +24,7 @@ export const SnowparkCard = (props) => {
                         <p className="card-text">Shapers: {value.shapers}</p>
                         <p className="card-text">Catdrivers: {value.bullydrivers}</p>
 
-                        <div className="card-footer bg-transparent position-absolute pb-1 " >
+                        <div className="card-footer bg-transparent " >
                             <div className="ms-3 me-3">
                                 <button type="button" className="btn btn-dark" data-bs-toggle="modal" data-bs-target={`#exampleModal_${value.id}`}>More Info</button>
                                 <SnowparkModal id={value.id} name={value.name} resort={value.resort} location={value.location} country={value.country} shapers={value.shapers} bullydrivers={value.bullydrivers} web={value.web} machines={value.machines} comment={value.comment} />
